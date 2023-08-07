@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import CanBusDisplay from '../components/CanBusDisplay';
 
 const Calendar = lazy(() => import('../pages/Calendar'));
 const Chart = lazy(() => import('../pages/Chart'));
@@ -17,8 +18,8 @@ const coreRoutes = [
     component: Calendar,
   },
   {
-    path: '/profile',
-    title: 'Profile',
+    path: '/map',
+    title: 'Map',
     component: Profile,
   },
   {
@@ -55,6 +56,11 @@ const coreRoutes = [
     path: '/ui/buttons',
     title: 'Buttons',
     component: Buttons,
+  },
+  {
+    path: '/CAN',
+    title: 'CAN Bus',
+    component: CanBusDisplay,
   },
 ];
 
