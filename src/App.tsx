@@ -10,6 +10,7 @@ import routes from './routes';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
+
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -21,15 +22,16 @@ function App() {
     <Loader />
   ) : (
     <>
-    <Toaster position='top-right' reverseOrder={false} containerClassName='overflow-auto'/>
-  
+      <Toaster position='top-right' reverseOrder={false} containerClassName='overflow-auto'/>
+
       <Routes>
         <Route path="/auth/signin" element={<SignIn />} />
         <Route path="/auth/signup" element={<SignUp />} />
         <Route element={<DefaultLayout />}>
           <Route index element={<ECommerce />} />
-          {routes.map(({ path, component: Component }) => (
+          {routes.map(({ path, component: Component }, index) => ( // Add 'index' to the map function
             <Route
+              key={index} // Use the 'index' as the 'key'
               path={path}
               element={
                 <Suspense fallback={<Loader />}>
