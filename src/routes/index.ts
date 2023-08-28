@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import CanBusDisplay from '../components/CanBusDisplay';
 import DocumentPage from '../pages/docs/DocumentPage';
 import DocumentsHomePage from '../pages/docs/DocumentsHomePage';
+import CameraHome from '../pages/Camera/CameraHome';
 
 const Calendar = lazy(() => import('../pages/Calendar'));
 const Chart = lazy(() => import('../pages/Chart'));
@@ -73,6 +74,11 @@ const coreRoutes = [
     path: '/docs/',
     title: 'Documentation',
     component: DocumentsHomePage,
+  },
+  {
+    path: '/cameras/',
+    title: 'Cameras',
+    component: CameraHome,
   },
 ];
 
