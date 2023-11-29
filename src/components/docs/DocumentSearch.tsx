@@ -23,7 +23,7 @@ const DocumentSearch: React.FC<DocumentSearchProps> = ({ className }) => {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/docs/search/${searchText}`);
+      const response = await fetch(`${API_BASE_URL}/docs/search/title/${searchText}`);
       const data = await response.json();
       setSearchResults(data.results);
     } catch (error) {

@@ -5,7 +5,7 @@ import { Document } from '../../components/docs/Common';
 const DocumentPage: React.FC = () => {
   const [document, setDocument] = useState<Document | null>(null);
   const queryParameters = new URLSearchParams(window.location.search)
-  const id = queryParameters.get("id")
+  const title = queryParameters.get("title")
 
 
   function formatDate(secs: string) {
@@ -22,7 +22,7 @@ const DocumentPage: React.FC = () => {
   useEffect(() => {
     const fetchDocument = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/docs/${id}`);
+        const response = await fetch(`${API_BASE_URL}/docs/title/${title}`);
         const data = await response.json();
         setDocument(data);
       } catch (error) {
@@ -31,7 +31,7 @@ const DocumentPage: React.FC = () => {
     };
 
     fetchDocument();
-  }, [id]);
+  }, [title]);
 
   if (!document) {
     return <div>Loading...</div>;

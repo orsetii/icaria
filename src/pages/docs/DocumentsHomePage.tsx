@@ -1,6 +1,7 @@
 import React from 'react';
 import DocumentSearch from '../../components/docs/DocumentSearch';
 import RecentlyChanged from '../../components/docs/recentlyChanged';
+import MarkdownViewer from '../../components/docs/MarkdownViewer';
 
 
 const DocumentsHomePage: React.FC = () => {
@@ -20,6 +21,8 @@ const DocumentsHomePage: React.FC = () => {
         <div className="w-2/3 p-4 text-center">
           <RecentlyChanged />
         </div>
+
+        <MarkdownViewer />
         
         {/* Blank Space */}
         <div className="w-1/3 bg-gray-100"></div>

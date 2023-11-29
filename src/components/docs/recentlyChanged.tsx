@@ -29,7 +29,7 @@ const RecentlyChanged: React.FC = () => {
         {recentDocuments.map((document) => (
           <li key={document.id} className="flex flex-col">
             <Link
-              to={`/docs/view?id=${document.id}`}
+              to={`/docs/view?title=${document.title}`}
               className="text-blue-500 hover:underline"
             >
               {document.title}
